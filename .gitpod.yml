@@ -1,0 +1,41 @@
+# Learn more about this file at 'https://www.gitpod.io/docs/references/gitpod-yml'
+#
+# This '.gitpod.yml' file when placed at the root of a project instructs
+# Gitpod how to prepare & build the project, start development environments
+# and configure continuous prebuilds. Prebuilds when enabled builds a project
+# like a CI server so you can start coding right away - no more waiting for
+# dependencies to download and builds to finish when reviewing pull-requests
+# or hacking on something new.
+#
+# With Gitpod you can develop software from any device (even iPads) via
+# desktop or browser based versions of VS Code or any JetBrains IDE and
+# customise it to your individual needs - from themes to extensions, you
+# have full control.
+
+tasks:
+  - name: Initialize & Configure kubectl
+    init: bash $GITPOD_REPO_ROOT/setup_kubectl_with_gitpod.sh
+
+# The 'github' section defines configuration of continuous prebuilds
+# for GitHub repositories when the GitHub application
+# 'https://github.com/apps/gitpod-io' is installed in GitHub and granted
+# permissions to access the repository.
+#
+# Learn more at 'https://www.gitpod.io/docs/prebuilds'
+
+github:
+  prebuilds:
+    # enable for the default branch
+    master: true
+    # enable for all branches in this repo
+    branches: true
+    # enable for pull requests coming from this repo
+    pullRequests: true
+    # enable for pull requests coming from forks
+    pullRequestsFromForks: true
+    # add a check to pull requests
+    addCheck: true
+    # add a "Review in Gitpod" button as a comment to pull requests
+    addComment: false
+    # add a "Review in Gitpod" button to the pull request's description
+    addBadge: true
