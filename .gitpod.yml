@@ -13,8 +13,8 @@
 # have full control.
 
 tasks:
-  - name: Initialize & Configure kubectl
-    init: bash $GITPOD_REPO_ROOT/setup_kubectl_with_gitpod.sh
+  - name: Setup kubectl
+    command: bash $GITPOD_REPO_ROOT/setup_kubectl_with_gitpod.sh
 
 # The 'github' section defines configuration of continuous prebuilds
 # for GitHub repositories when the GitHub application
